@@ -191,7 +191,7 @@ if get.status_code == 200:
   known_encodings = []
 
   for filename in os.listdir('./data'):
-    if filename != sys.argv[1:][0]:
+    if filename != sys.argv[1:][0] and filename != '.gitignore':
       picture = face_recognition.load_image_file("./data/" + filename)
       face_encoding = face_recognition.face_encodings(picture)
       #TODO find out why some files cant be encoded
